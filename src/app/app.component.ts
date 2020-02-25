@@ -61,11 +61,11 @@ export class AppComponent {
   this.items.push('Nuevo Item');
   }
 
-  deleteItem(index: number){
+  deleteItem(index: number) {
   this.items.splice(index, 1);
   }
 
-  clickProducty(id: number){
+  clickProducty(id: number) {
   console.log('Product');
   console.log(id);
   }
