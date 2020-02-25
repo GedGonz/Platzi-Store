@@ -10,6 +10,7 @@ export class AppComponent {
 
   items = ['Gerald', 'Gonzalez', 'Zeledon'];
 
+  power = 10;
 
   products: Product[] = [
     {
