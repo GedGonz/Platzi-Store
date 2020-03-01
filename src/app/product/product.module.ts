@@ -4,7 +4,7 @@ import { ProductComponent} from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { SharedModule } from './../shared/shared.module';
-import { ProductRoutingModule } from './components/product-routing.module';
+import { ProductRoutingModule } from './product-routing.module';
 
 @NgModule({
   declarations: [
