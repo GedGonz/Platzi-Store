@@ -11,19 +11,24 @@ import { Product } from '../../../product.model';
 export class ProductDetailComponent implements OnInit {
 
   product: Product;
+
   constructor(private route: ActivatedRoute, private productsService: ProductsService) {
 
      }
 
+  fecthProduct(id: string) {
+      this.productsService.getPoduct(id).subscribe(product => {
+        this.product = product
+      });
+  }
+
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
-      this.productsService.getPoduct(id).subscribe(p => {
-      this.product = p
-    });
+      this.fecthProduct(id);
 
-      console.log(this.product);
-    })
+    });
   }
+
 
 }
