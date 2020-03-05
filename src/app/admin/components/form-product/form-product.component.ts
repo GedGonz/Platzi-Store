@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductsService } from '../../../core/services/products/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-product',
@@ -10,14 +12,30 @@ export class FormProductComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder,
+    private productsService: ProductsService, private router: Router) {
     this.builForm();
   }
 
   ngOnInit() {
   }
 
+  saveProduct(event: Event) {
+    event.preventDefault();
+
+    if (this.form.valid) {
+
+      const product = this.form.value;
+      this.productsService.createProduct(product)
+      .subscribe(prod => {
+        console.log(prod);
+        this.router.navigate(['./admin/products']);
+      });
+    }
+  }
+
 private builForm() {
+
   this.form = this.formBuilder.group({
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
