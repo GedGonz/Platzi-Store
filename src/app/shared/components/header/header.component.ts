@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 import { CartService } from '../../../core/services/cart.service';
 import { pipe, Observable } from 'rxjs';
 

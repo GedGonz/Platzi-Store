@@ -24,7 +24,6 @@ export class ProductComponent {
     addcart() {
         console.log('Añadir al carrito');
         this.cartService.addCart(this.product);
-        //this.productClicked.emit(this.product.id);
     }
 
 }

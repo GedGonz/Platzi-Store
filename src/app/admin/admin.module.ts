@@ -18,7 +18,6 @@ import { ProductEditComponent } from '../admin/components/product-edit/product-e
     AdminRoutingModule,
     ReactiveFormsModule,
     MaterialModule
-    
   ]
 })
 export class AdminModule { }
