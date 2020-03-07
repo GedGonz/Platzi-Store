@@ -31,6 +31,10 @@ const routes: Routes = [
                   path: 'contact',
                   canActivate: [ AdminGuard ],
                   loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+                },
+                {
+                  path: 'auth',
+                  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
                 }
               ]
   },
