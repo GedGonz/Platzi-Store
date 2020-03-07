@@ -17,7 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 
 import { LayoutModule } from '@angular/cdk/layout';
-
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -38,7 +38,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule,
     LayoutModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatStepperModule
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +55,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule,
     LayoutModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule { }
