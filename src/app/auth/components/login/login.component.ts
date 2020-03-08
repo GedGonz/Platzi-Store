@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder ) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router ) {
     this.builForm();
    }
 
@@ -25,8 +26,16 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]]
     });
   }
-  saveProduct(event: Event) {
+  logIn(event: Event) {
     event.preventDefault();
-
+    const value = this.form.value;
+    this.authService.logIn(value.email, value.password)
+    .then(() => {
+      console.log('Inicia sesion!');
+      this.router.navigate(['/admin']);
+    })
+    .catch(() => {
+      alert('no es valido!');
+    });
   }
 }
